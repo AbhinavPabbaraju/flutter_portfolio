@@ -25,51 +25,6 @@ flutter build web --release
 The output lands in `build/web/`. Push that to a `gh-pages` branch, or point
 GitHub Pages at it, and paste the resulting URL into the WebLink column.
 
-If your lab machine is offline, `google_fonts` and `url_launcher` will fail to
-resolve. Remove both from `pubspec.yaml`, then in `lib/theme/app_theme.dart`
-replace the three `GoogleFonts.getFont(...)` calls with plain `TextStyle(...)`
-and delete the `openUrl` body in `lib/core/layout.dart`. Everything else
-compiles untouched.
-
-## Before you submit
-
-1. **Replace the portrait.** Drop your photo in as
-   `assets/images/avatar.jpg`, portrait crop, roughly 600×730. The file
-   currently there is a monogram placeholder. If the file is missing entirely
-   the app falls back to a painted "AP" rather than crashing.
-2. **Check the repo slugs.** `lib/data/projects.dart` builds each repository
-   URL as `github.com/AbhinavPabbaraju/<repoSlug>`. I guessed the slugs from
-   the project names — open each repo and correct them, and delete `repoSlug`
-   for anything that is still private.
-3. **Trim the skills list.** `lib/data/profile.dart` lists what your projects
-   demonstrate. Cut anything you would not want to be questioned on in a viva.
-
-## Design notes
-
-Useful if you get asked to justify the choices.
-
-**Palette** is named after Japanese dyes rather than roles: `kon` (紺, the
-indigo of aizome-dyed cloth) as the ground, `washi` for paper-coloured text,
-`kincha` (金茶, brass) as the single accent, `asagi` (浅葱) for links, and `shu`
-(朱) confined to the seals. Deliberately a real indigo, not a tinted black, and
-deliberately not the default purple.
-
-**Type** is two Japanese families with one clear split: Shippori Mincho, a
-serif, for everything that carries personality; Zen Kaku Gothic New for reading.
-JetBrains Mono appears only on machine data — stacks, dates, URLs — so
-monospace means something instead of being decoration.
-
-**The wave pattern** behind the hero is 青海波 (seigaiha), drawn on a canvas by
-`SeigaihaPainter` in `lib/widgets/seigaiha.dart` — concentric half-circles in
-offset rows, at about 5% opacity. Nothing is imported as an image.
-
-**The seals** are 判子 (hanko), the carved personal stamps used on Japanese
-documents. Each project gets a kanji naming what it does — 合意 consensus, 翻訳
-translation, 審査 review — instead of the 01 / 02 / 03 markers a project list
-does not need, since the work is not a sequence.
-
-**Structure** is carried by hairline rules and spacing, not by chopping every
-section into identical rounded cards.
 
 ## Responsive behaviour
 
